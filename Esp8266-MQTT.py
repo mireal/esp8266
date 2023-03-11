@@ -4,17 +4,8 @@ import machine
 import time
 import ubinascii
 import dht
+from config import WIFI_SSID, WIFI_PASSWORD, MQTT_BROKER, MQTT_PORT, MQTT_USER, MQTT_PASSWORD, MQTT_TOPIC
 
-# Define WiFi credentials
-WIFI_SSID = 'Povar'
-WIFI_PASSWORD = '2332231f2f3f'
-
-# Define MQTT broker credentials
-MQTT_BROKER = '192.168.0.105'
-MQTT_PORT = 1883
-MQTT_USER = ''
-MQTT_PASSWORD = ''
-MQTT_TOPIC = 'test'
 
 # Pin connected to DHT22 sensor
 dht_pin = machine.Pin(2)
@@ -39,7 +30,7 @@ def connect_wifi():
         while not sta_if.isconnected():
             pass
     print('WiFi connected!')
-    print('Network config:', sta_if.ifconfig())
+    print('Network config.py:', sta_if.ifconfig())
 
 # Define function to connect to MQTT broker
 def connect_mqtt():
